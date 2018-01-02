@@ -63,122 +63,7 @@
                     noLoop();
                 }
             }
-            if (ballY > height + paddleHeight || ballY < 0 + paddleHeight + 4) { 
-                if (ballX > mouseX && ballX < mouseX + paddleWidth) {
-                    ballSpeedY = ballSpeedY * -1;
-
-
-                }
-                else {
-                    text("GAME OVER, SORRY TRY AGAIN!", width / 2, height / 2)
-                    noLoop();
-                }
-
-            }
-
-        }
-
-
-
-
-
-        function drawBall() {
-            fill(255)
-            noStroke();
-            ellipse(ballX, ballY, 25, 25)
-
-
-        }
-
-
-
-
-
-
-        function drawPaddle() {
-            fill(0, 0, 255) // BLUE PADDLE
-            stroke(0, 0, 255) // BLUE STROKE
-            strokeWeight(4);
-            rect(mouseX, height - paddleHeight - 4, paddleWidth, paddleHeight);
-        }
-
-        function drawPaddle2() {
-            fill(255, 0, 0) // RED PADDLE
-            stroke(255, 0, ) // RED STROKE
-            strokeWeight(4);
-            rect(mouseX, 0 + 4, paddleWidth, paddleHeight)
-
-
-        }
-    </script>
-</head>
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-
-<head>
-    <title>Pong</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.13/p5.js"></script>
-    <script>
-        var ballX;
-        var ballY;
-        var ballSpeedX = 10;
-        var ballSpeedY = 10;
-        var paddleHeight = 30;
-        var paddleWidth = 80;
-
-        function setup() {
-            createCanvas(600, 600);
-            noCursor();
-            ballX = random(width);
-            ballY = random(300, 300);
-
-
-
-        }
-
-        function draw() {
-            background(0);
-            moveBall();
-            checkCollide();
-            drawPaddle();
-            drawPaddle2();
-            drawBall();
-
-
-        }
-
-        function moveBall() {
-            ballX = ballX + ballSpeedX;
-            ballY = ballY + ballSpeedY;
-
-            console.log("ballSpeedX: " + ballSpeedX +
-                ", ballSpeedY: " + ballSpeedY);
-        }
-
-        function checkCollide() {
-            if (ballX < 0 || ballX > width) {
-                ballSpeedX = ballSpeedX * -1;
-            }
-            if (ballY < 0) {
-                ballSpeedY = ballSpeedY * -1;
-            }
-            if (ballY > height - paddleHeight) {
-                if (ballX > mouseX && ballX < mouseX + paddleWidth) {
-                    ballSpeedY = ballSpeedY * -1
-
-
-
-
-
-
-                }
-                else {
-                    text("GAME OVER, SORRY TRY AGAIN!", width / 2, height / 2);
-                    noLoop();
-                }
-            }
-            if (ballY > height + paddleHeight || ballY < 0 + paddleHeight + 4) { 
+            if (ballY > height + paddleHeight || ballY < 0 + paddleHeight + 4) {
                 if (ballX > mouseX && ballX < mouseX + paddleWidth) {
                     ballSpeedY = ballSpeedY * -1;
 
@@ -229,7 +114,7 @@
 </head>
 
 <body>
-<form><input TYPE="button" onClick="history.go(0)" value="Reset"></form>
+    <form><input TYPE="button" onClick="history.go(0)" value="Reset"></form>
     <div id="code" class="container-fluid">
         <script src="https://gist-it.appspot.com/github/nicholasr8118/p5js/blob/master/pong-remix.html?footer=0"></script>
     </div>
